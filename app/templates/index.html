@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <div class="jumbotron">
-        <h1><span class="text-info">ε-(´・｀) ﾌ</span></h1>
-        <p style="padding-top: 50px">Finally set up 
-            <a href="http://pythonhosted.org/Flask-Bootstrap">
-                Flask-Bootstrap
-            </a>.
-            <a class="btn btn-lg btn-default" 
-                role="button" 
-                href="http://pythonhosted.org/Flask-Bootstrap">
-                docs
-            </a>
-        </p>
-        <p>
-            <small>Only version 3 is supported with this flask-bootstrap package.</small>
-        </p>
+
+{% block messages %}
+<div class="container"
+    <div id="messages"class="container">
+        <div id="messages-body" class="jumbotron">
+            <h1><span class="text-info">ε-(´・｀) ﾌ</span></h1>
+            <p style="padding-top: 50px">Finally set up 
+                <a href="http://pythonhosted.org/Flask-Bootstrap">
+                    Flask-Bootstrap
+                </a>
+                <br>
+                <a class="btn btn-lg btn-default" 
+                    role="button" 
+                    href="http://pythonhosted.org/Flask-Bootstrap">docs!
+                </a>
+            </p>
+            <p>
+                <small>Only version 3 is supported with this flask-bootstrap package.</small>
+            </p>
+        </div>
     </div>
 </div>
+{% endblock %}
+
 {% endblock %}
