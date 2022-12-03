@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}G A T H E R{% endblock %}
+{% block title %}GATHER{% endblock %}
 
 {% import "bootstrap/fixes.html" as fixes %}
 
@@ -20,4 +20,16 @@
         <a class="navbar-brand" href="{{ url_for('login') }}">Login</a>
     </div>
 </div>
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
 {% endblock %}

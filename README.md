@@ -5,5 +5,5 @@ Collection management tool for 'Magic: The Gathering' card game.
 - Pip install requirements to gather necessary packages.
 
 #### To Do
-- Finish login form and post
-- Member dashboard/landing page
+- Fix post validation messages
+- Member landing page
