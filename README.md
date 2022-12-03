@@ -1,5 +1,5 @@
 # gather
-Bringing an old collection management project, MTG Card manager, back to life with flask.
+Bringing an old collection management project, Gather (and MTG collection manager), back to life with flask.
 
 - Requires flaskenv file to hold environment/debug variables.
 - Pip install requirements to gather necessary packages.
