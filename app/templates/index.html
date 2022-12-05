@@ -2,22 +2,8 @@
 
 {% block content %}
 {{super()}}
-<div class="container">
-    <div class="jumbotron">
-        <h1><span class="text-info">ε-(´・｀) ﾌ</span></h1>
-        <p style="padding-top: 50px">Finally set up 
-            <a href="http://pythonhosted.org/Flask-Bootstrap">
-                Flask-Bootstrap
-            </a>
-            <br>
-            <a class="btn btn-lg btn-default" 
-                role="button" 
-                href="http://pythonhosted.org/Flask-Bootstrap">docs!
-            </a>
-        </p>
-        <p>
-            <small>Only version 3 is supported with this flask-bootstrap package.</small>
-        </p>
-    </div>
-</div>
+<h1>Hi, {{ current_user.username }} <small>ヾ(°∇°*)</small></h1>
+{% for post in posts %}
+<div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+{% endfor %}
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Sign In{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% block navbar %}{{ super() }}{% endblock %}
 
@@ -8,15 +8,21 @@
 {{super()}}
 <div class="container">
     <div class="jumbotron">
-        <h1><span class="text-info">૮₍˶Ó﹏Ò ⑅₎ა</span></h1>
-        <p style="padding-top: 50px">You aren't... logged in??</p>
-        <p style="padding-top: 50px">Head over to <a href="{{ url_for('register') }}">registration</a> to get signed up.</p>
-        <form action="" method="post" novalidate>
+        <h1><span class="text-info">(ง ͠ ͠° ل͜ °)ง</span></h1>
+        <p style="padding-top: 50px">Punch some stuff in to get on the list~</p>
+        <form action="" method="post">
             {{ form.hidden_tag() }}
             <p>
                 {{ form.username.label }}<br>
                 {{ form.username(size=32) }}<br>
                 {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=64) }}<br>
+                {% for error in form.email.errors %}
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>
@@ -27,7 +33,13 @@
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>
-            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>
+                {{ form.password2.label }}<br>
+                {{ form.password2(size=32) }}<br>
+                {% for error in form.password2.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
             <p>{{ form.submit() }}</p>
         </form>
     </div>
