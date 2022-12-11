@@ -6,6 +6,13 @@ Bringing an old collection management project, Gather (and MTG collection manage
 - flask db init
 
 #### To Do
+Following [Miguel Grinberg's Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) to complete blog section. Adding collection manager as feature in blog posts.
 - ~~Fix post validation messages~~
-- Member landing page
+- ~~Member landing page functionality~~
 - ~~DB~~
+- ~~Login~~
+- ~~Register~~
+- User blog posts
+- User card library
+- Card table
+- Card api (apis?)
