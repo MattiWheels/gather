@@ -1,7 +1,8 @@
 from werkzeug.security import generate_password_hash, check_password_hash
+#from libgravatar import md5_hash, sanitize_email, default_url_is_valid
+from hashlib import md5
 from datetime import datetime
 from flask_login import UserMixin
-from hashlib import md5
 from app import login
 from app import db
 

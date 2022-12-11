@@ -12,6 +12,8 @@ Following [Miguel Grinberg's Flask Mega-Tutorial](https://blog.miguelgrinberg.co
 - ~~DB~~
 - ~~Login~~
 - ~~Register~~
+- ~~Avatar~~
+- Check if gravatar exists
 - User blog posts
 - User card library
 - Card table

@@ -54,7 +54,6 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    print(user.avatar(128))
     posts = [
         {'author' : user, 'body' : 'Test post #1'},
         {'author' : user, 'body' : 'Test post #2'}
