@@ -2,8 +2,10 @@
 
 {% block content %}
 {{super()}}
-    <img src="{{ user.avatar(128) }}">
-    <h1>User: {{ user.username }} <small>ヾ(°∇°*)</small></h1>
+    <div class="container jumbotron">
+        <img src="{{ user.avatar(128) }}">
+        <h3><small>ヾ(°∇°*)</small> {{ user.username }}</h3>
+    </div>
     {% for post in posts %}
     <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %}
