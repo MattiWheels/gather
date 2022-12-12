@@ -4,6 +4,14 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from app.models import User, Post
+from datetime import datetime
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        current_user.about_me = 'TESTING'
+        db.session.commit()
 
 @app.route('/')
 @app.route('/index')
