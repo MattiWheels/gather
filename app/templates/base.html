@@ -11,7 +11,7 @@
     <body>
         <header>
             {% block navbar %}
-            <div class="fixed top-0 left-0 w-screen flex flex-row bg-primary text-secondary shadow-lg">
+            <div class="top-0 left-0 w-screen flex flex-row bg-primary text-secondary shadow-lg">
                 <a class="px-2" href="{{ url_for('index') }}">Gather</a>
                 {% if current_user.is_anonymous %}
                 <a class="px-2" href="{{ url_for('login') }}">Login</a>

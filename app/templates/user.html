@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}HOMEY{% endblock %}
+{% block title %}{{ user.username }}'s profile{% endblock %}
 
 {% block main_content %}
-    <p><small>ヾ(°∇°*)</small></p>
-    <div class="container jumbotron">
+    <div>
         <table>
             <tr valign="top">
                 <td><img src="{{ user.avatar(128) }}"></td>
-                <td><h1>{{ user.username }}</h1>
-                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-                {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
+                <td>
+                    <h1>{{ user.username }}</h1>
+                    <h1><span>(≖_≖ )</span></h1>
+                    {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                    {% if user.last_seen %}<p>Last seen: {{ user.last_seen }}</p>{% endif %}
+                    {% if user == current_user %}<p><a href="{{ url_for('edit_profile') }}">Update if you dare...</a></p>{% endif %}
                 </td>
             </tr>
         </table>
