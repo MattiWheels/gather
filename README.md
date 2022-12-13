@@ -7,6 +7,7 @@ Bringing an old collection management project, Gather (an MTG collection manager
 - Install npm
 - Install tailwindcss
 - `npx tailwindcss -i ./app/static/src/input.css -o ./app/static/dist/output.css --watch`
+- `flask run` (don't forget to setup environment variables or .flaskenv)
 
 #### To Do
 Following [Miguel Grinberg's Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) to complete blog section. Adding collection manager as feature in blog posts.

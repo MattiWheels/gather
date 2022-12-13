@@ -11,17 +11,15 @@
     <body>
         <header>
             {% block navbar %}
-            <div class="">
-                <div class="">
-                    <a class="" href="{{ url_for('index') }}">Gather</a>
-                    {% if current_user.is_anonymous %}
-                    <a class="" href="{{ url_for('login') }}">Login</a>
-                    <a class="" href="{{ url_for('register') }}">Register</a>
-                    {% else %}
-                    <a class="" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-                    <a class="" href="{{ url_for('logout') }}">Logout</a>
-                    {% endif %}
-                </div>
+            <div class="fixed top-0 left-0 w-screen flex flex-row bg-primary text-secondary shadow-lg">
+                <a class="px-2" href="{{ url_for('index') }}">Gather</a>
+                {% if current_user.is_anonymous %}
+                <a class="px-2" href="{{ url_for('login') }}">Login</a>
+                <a class="px-2" href="{{ url_for('register') }}">Register</a>
+                {% else %}
+                <a class="px-2" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+                <a class="px-2" href="{{ url_for('logout') }}">Logout</a>
+                {% endif %}
             </div>
             {% endblock %}
 
@@ -30,7 +28,7 @@
                 {% if messages %}
                 <ul>
                     {% for message in messages %}
-                    <li>{{ message }}</li>
+                    <li class="text-green-900">{{ message }}</li>
                     {% endfor %}
                 </ul>
                 {% endif %}
