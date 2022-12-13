@@ -1,41 +1,46 @@
-{% extends "bootstrap/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='dist/output.css') }}">
 
-{% block title %}GATHER{% endblock %}
+    </head>
+    <body>
+        <header>
+            {% block navbar %}
+            <div class="">
+                <div class="">
+                    <a class="" href="{{ url_for('index') }}">Gather</a>
+                    {% if current_user.is_anonymous %}
+                    <a class="" href="{{ url_for('login') }}">Login</a>
+                    <a class="" href="{{ url_for('register') }}">Register</a>
+                    {% else %}
+                    <a class="" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+                    <a class="" href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endblock %}
 
-{% import "bootstrap/fixes.html" as fixes %}
-
-{% block head %}
-    {{super()}}
-    {{fixes.ie8()}}
-{% endblock %}
-
-{% block styles %}
-    {{super()}}
-{% endblock %}
-
-{% block navbar %}
-<div class="navbar">
-    <div class="container">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Gather</a>
-        {% if current_user.is_anonymous %}
-        <a class="navbar-brand" href="{{ url_for('login') }}">Login</a>
-        <a class="navbar-brand" href="{{ url_for('register') }}">Register</a>
-        {% else %}
-        <a class="navbar-brand" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-        <a class="navbar-brand" href="{{ url_for('logout') }}">Logout</a>
-        {% endif %}
-    </div>
-</div>
-{% endblock %}
-
-{% block content %}
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
-{% endblock %}
+            {% block message_content %}
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            {% endblock %}
+        </header>
+        <main>
+            {% block main_content %}
+            {% endblock %}
+        </main>
+        <!--script src="index.js"></script-->
+    </body>
+</html>

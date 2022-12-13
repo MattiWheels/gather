@@ -3,3 +3,4 @@
 .flaskenv
 /migrations
 /gather.db
+/node_modules
