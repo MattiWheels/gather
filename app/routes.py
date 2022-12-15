@@ -28,6 +28,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
+        print(form.username.data)
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect(url_for('login'))
@@ -73,14 +74,17 @@ def user(username):
 def edit_profile():
     form = EditProfileForm()
     if form.validate_on_submit():
+        print(current_user.username, ' is about to be overwritten with ', form.username.data)
+        print(current_user.about_me, ' is about to be overwritten with ', form.about_me.data)
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
         db.session.commit()
-        print(current_user.about_me)
         flash('Your changes were saved.')
+        print(current_user.username, current_user.about_me)
         return redirect(url_for('edit_profile'))
     elif request.method == 'GET':
+        print(current_user.about_me)
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
         print(form.about_me.data)
-    return render_template('edit_profile.html', form=form)
+    return render_template('edit_profile.html', title='Edit Profile', form=form)

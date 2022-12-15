@@ -12,7 +12,11 @@ Bringing an old collection management project, Gather (an MTG collection manager
 #### To Do
 Following [Miguel Grinberg's Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) to complete blog section. Adding collection manager as feature in blog posts.
 
-- Check if gravatar exists otherwise use generated avatar
-- User based blog posts, add special formatting
-- User card library
+- ༼つಠ益ಠ༽つ ─=≡ΣO))
+- GET request after POST from editing profile doesn't return committed data?
+- User created posts
+
+##### To Do (Later-ish)
+
+- User card library (add/remove)
 - Card table (updates from scryfall)

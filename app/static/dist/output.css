@@ -551,10 +551,6 @@ video {
   position: static;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .top-0 {
   top: 0px;
 }
