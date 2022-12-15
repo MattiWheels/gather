@@ -1,5 +1,5 @@
 # gather
-Bringing an old collection management project, Gather (an MTG collection manager), back to life with flask. Following Miguel Grinberg's flask mega tutorial for the blog portion of the app.
+Bringing an old project, Gather (an MTG collection manager), back to life with flask. Following Miguel Grinberg's flask mega tutorial for the blog portion of the app.
 
 - Create flaskenv to store environment/debug variables
 - Install pip requirements to gather necessary packages
